@@ -37,3 +37,17 @@ def test_score_decreases_on_wrong_guess():
     # FIX: wrong guesses should never increase score
     result = update_score(100, "Too High", 2)
     assert result == 95
+
+def test_parse_negative_number():
+    ok, value, err = parse_guess("-5")
+    assert ok == True
+    assert value == -5
+
+def test_parse_decimal():
+    ok, value, err = parse_guess("42.7")
+    assert ok == True
+    assert value == 42  # your code converts float → int
+
+def test_parse_large_number():
+    ok, value, err = parse_guess("999999")
+    assert ok == True

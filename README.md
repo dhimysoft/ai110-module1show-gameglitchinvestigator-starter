@@ -25,13 +25,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+### 🎯 Game Purpose
+This is a number guessing game where the player must guess a randomly generated number within a limited number of attempts. The game provides hints and tracks a score based on performance.
+
+### 🐛 Bugs Found
+- Secret number was sometimes converted to a string, breaking comparisons  
+- Hint logic was reversed (misleading feedback)  
+- Score system incorrectly rewarded wrong guesses  
+
+### 🔧 Fixes Applied
+- Ensured the secret number remains an integer  
+- Corrected hint logic in `check_guess`  
+- Fixed scoring to always subtract points for wrong guesses  
+- Refactored logic into `logic_utils.py` for better structure  
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![Winning Game](screenshot.png)
 
 ## 🚀 Stretch Features
 
